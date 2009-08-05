@@ -9,7 +9,9 @@
 		<attribute name="output.dir" default="${package.dist.dir}"/>
 		<sequential>
 			<mkdir dir="@{output.dir}"/>
-			<copy dir="${resource.src.dir}" tofile="@{output.dir}"/>
+			<copy todir="@{output.dir}">
+				<fileset dir="${resource.src.dir}" />
+			</copy>
 		</sequential>
 	</macrodef>
 
