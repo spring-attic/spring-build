@@ -48,19 +48,21 @@
 
 	<target name="clover.pre" depends="clover.init">
 		<delete dir="${clover.output.dir}" quiet="true"/>
-		<mkdir dir="${clover.output.dir}"/>
+		<mkdir dir="${clover.db.dir}"/>
 	</target>
 
 	<target name="clover.do">
-		<clover-setup initstring="${clover.db.file}"/>
-		<all-bundles target="clover.do">
-			<property name="clover.output.dir" value="${clover.output.dir}"/>
-			<property name="clover.db.file" value="${clover.db.file}"/>
+		<all-bundles target="clover">
 			<property name="test-results.output.dir" value="${test-results.output.dir}"/>
 		</all-bundles>
 	</target>
 
 	<target name="clover.post" depends="clover.init">
+		<clover-merge initString="${clover.db.file}">
+			<cloverDbSet dir="${basedir}/.." span="30m">
+				<include name="**/target/clover/db/clover.db"/>
+			</cloverDbSet>
+		</clover-merge>
 		<clover-report initstring="${clover.db.file}">
 			<current outfile="${clover.output.dir}/clover.xml" span="30m">
 				<format type="xml"/>
