@@ -52,9 +52,19 @@
 	</target>
 
 	<target name="clover.do">
-		<all-bundles target="clover">
-			<property name="test-results.output.dir" value="${test-results.output.dir}"/>
-		</all-bundles>
+		<condition property="has.unit.test.bundles">
+			<isreference refid="unit.test.bundles" />
+		</condition>
+		<antcall target="clover.do.unit"/>
+		<antcall target="clover.do.all" />
+	</target>
+
+	<target name="clover.do.unit" if="has.unit.test.bundles">
+		<all-bundles target="clover" buildpathRef="unit.test.bundles"/>
+	</target>
+
+	<target name="clover.do.all" unless="has.unit.test.bundles">
+		<all-bundles target="clover" buildpathRef="bundles"/>
 	</target>
 
 	<target name="clover.post" depends="clover.init">
