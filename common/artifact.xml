@@ -26,6 +26,8 @@
 
 		<compile classpath.id="compile.classpath" input.dir="${main.java.dir}" output.dir="${main.output.dir}"
 				resources.dir="${main.resources.dir}"/>
+		<ivy:retrieve resolveId="additional.classpath" conf="additional" type="jar" transitive="false"
+				pattern="${main.output.dir}/[artifact]-[revision].[ext]" log="download-only"/>
 		<jar destfile="${jar.output.file}" basedir="${main.output.dir}" index="true" filesetmanifest="merge">
 			<manifest>
 				<attribute name="Bundle-ManifestVersion" value="2"/>
