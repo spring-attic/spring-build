@@ -4,6 +4,9 @@
 	<import file="common.xml"/>
 	<import file="../common/artifact.xml"/>
 
+	<target name="jar" depends="ivy.init, resolve.aspects, artifact-common.jar"
+			description="Creates a JAR file containing the output of a compilation of the source tree."/>
+
 <!-- Other targets -->
 	<target name="compile.init" depends="ivy.init">
 		<ivy:cachepath resolveId="ajc.classpath" pathid="ajc.classpath" organisation="org.aspectj"
