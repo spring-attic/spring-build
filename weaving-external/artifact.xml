@@ -54,9 +54,9 @@
 	</target>
 
 	<target name="bundlor" depends="bundlor.init" unless="disable.bundlor">
-		<bundlor:bundlor bundlePath="${jar.output.file}" outputPath="${jar.output.file}"
-				mergeExistingHeaders="${merge.existing.headers}" bundleVersion="${bundle.version}"
-				manifestTemplatePath="${manifest.template.file}" failOnWarnings="${fail.on.warnings}">
+		<bundlor:bundlor inputPath="${jar.output.file}" outputPath="${jar.output.file}"
+				bundleVersion="${bundle.version}" manifestTemplatePath="${manifest.template.file}"
+				failOnWarnings="${fail.on.warnings}">
 			<propertyset refid="bundlor.properties"/>
 			<propertyset>
 				<propertyref builtin="all"/>

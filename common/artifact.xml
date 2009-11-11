@@ -26,6 +26,7 @@
 
 		<compile classpath.id="compile.classpath" input.dir="${main.java.dir}" output.dir="${main.output.dir}"
 				resources.dir="${main.resources.dir}"/>
+		<antcall target="bundlor"/>
 		<ivy:retrieve resolveId="additional.classpath" conf="additional" type="jar" transitive="false"
 				pattern="${main.output.dir}/[artifact]-[revision].[ext]" log="download-only"/>
 		<jar destfile="${jar.output.file}" basedir="${main.output.dir}" index="true" filesetmanifest="merge">
@@ -37,7 +38,6 @@
 				<attribute name="Implementation-Version" value="${implementation.version}"/>
 			</manifest>
 		</jar>
-		<antcall target="bundlor"/>
 		<jar destfile="${source-jar.output.file}" basedir="${main.java.dir}" index="true"/>
 		<ivy:publish resolver="integration" pubdate="${timestamp}" status="${release.type}">
 			<artifacts pattern="${ivy.output.dir}/[artifact].[ext]"/>
@@ -76,9 +76,9 @@
 	</target>
 
 	<target name="bundlor" depends="bundlor.init" unless="disable.bundlor">
-		<bundlor:bundlor bundlePath="${jar.output.file}" outputPath="${jar.output.file}"
-				mergeExistingHeaders="${merge.existing.headers}" bundleVersion="${bundle.version}"
-				manifestTemplatePath="${manifest.template.file}" failOnWarnings="${fail.on.warnings}">
+		<bundlor:bundlor inputPath="${main.output.dir}" outputPath="${main.output.dir}"
+				bundleVersion="${bundle.version}" manifestTemplatePath="${manifest.template.file}"
+				failOnWarnings="${fail.on.warnings}">
 			<propertyset refid="bundlor.properties"/>
 			<propertyset>
 				<propertyref builtin="all"/>
