@@ -18,7 +18,7 @@
 		<mkdir dir="${source-jar.output.dir}"/>
 
 		<iajc inPathRef="external.classpath" aspectPathRef="aspects.classpath" classpathRef="compile.classpath"
-				outJar="${jar.output.file}" source="${source.version}" checkRuntimeVersion="false"/>
+				outJar="${jar.output.file}" source="${source.version}" checkRuntimeVersion="false" X="${aspectj.x}"/>
 		<antcall target="bundlor"/>
 		<copy tofile="${source-jar.output.file}">
 			<path refid="external.srcpath"/>

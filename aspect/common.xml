@@ -12,7 +12,7 @@
 		<sequential>
 			<iajc sourceroots="@{input.dir}" destDir="@{output.dir}" classpathRef="@{classpath.id}" source="${source.version}"
 					debug="${compile.debug}" debugLevel="${compile.debug.level}" checkRuntimeVersion="false"
-					aspectPathRef="aspects.classpath"/>
+					aspectPathRef="aspects.classpath" X="${aspectj.x}"/>
 			<copy todir="@{output.dir}">
 				<fileset dir="@{input.dir}" erroronmissingdir="false">
 					<exclude name="**/*.aj"/>

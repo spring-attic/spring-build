@@ -17,7 +17,7 @@
 		<test-compile classpath.id="test.compile.classpath" input.dir="${test.java.dir}" output.dir="${test.output.dir}"
 				resources.dir="${test.resources.dir}"/>
 		<iajc inPath="${test.output.dir}" aspectPathRef="test.aspect.path" classpathRef="test.compile.classpath"
-				destDir="${test.output.dir}" source="${source.version}" checkRuntimeVersion="false"/>
+				destDir="${test.output.dir}" source="${source.version}" checkRuntimeVersion="false" X="${aspectj.x}"/>
 
 		<path id="test.run.classpath">
 			<pathelement location="${jar.output.file}"/>
@@ -52,7 +52,7 @@
 		<test-compile classpath.id="test.compile.classpath" input.dir="${test.clover.dir}" output.dir="${test.output.dir}"
 				resources.dir="${test.resources.dir}"/>
 		<iajc inPath="${test.output.dir}" aspectPathRef="test.aspect.path" classpathRef="test.compile.classpath"
-				destDir="${test.output.dir}" source="${source.version}" checkRuntimeVersion="false"/>
+				destDir="${test.output.dir}" source="${source.version}" checkRuntimeVersion="false" X="${aspectj.x}"/>
 		<delete dir="${clover.staging.dir}" quiet="true"/>
 	</target>
 

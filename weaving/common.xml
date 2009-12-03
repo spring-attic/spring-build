@@ -28,7 +28,7 @@
 				<fileset dir="@{resources.dir}" erroronmissingdir="false"/>
 			</copy>
 			<iajc inPath="${main.output.dir}" aspectPathRef="aspects.classpath" classpathRef="compile.classpath"
-				destDir="${main.output.dir}" source="${source.version}" checkRuntimeVersion="false"/>
+				destDir="${main.output.dir}" source="${source.version}" checkRuntimeVersion="false" X="${aspectj.x}"/>
 		</sequential>
 	</macrodef>
 
