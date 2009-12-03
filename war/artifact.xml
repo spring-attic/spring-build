@@ -20,9 +20,9 @@
 
 		<compile classpath.id="compile.classpath" input.dir="${main.java.dir}" output.dir="${war.classes.dir}"
 				resources.dir="${main.resources.dir}"/>
-		<antcall target="bundlor"/>
 		<ivy:retrieve resolveId="compile.classpath" conf="compile,runtime" type="jar"
 				pattern="${war.lib.dir}/[artifact]-[revision].[ext]" log="download-only"/>
+		<antcall target="bundlor"/>
 		<jar destfile="${war.output.file}" basedir="${war.staging.dir}" index="true" filesetmanifest="merge">
 			<manifest>
 				<attribute name="Bundle-Creator" value="${user.name}"/>
