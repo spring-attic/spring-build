@@ -88,7 +88,7 @@
 
 	<target name="bundlor.init" depends="ivy.init" unless="disable.bundlor">
 		<ivy:cachepath resolveId="bundlor.classpath" pathid="bundlor.classpath" organisation="com.springsource.bundlor"
-				module="com.springsource.bundlor.ant" revision="${bundlor.ant.version}" conf="compile" inline="true"
+				module="com.springsource.bundlor.ant" revision="${bundlor.ant.version}" conf="ant" inline="true"
 				type="jar" log="download-only"/>
 		<taskdef resource="com/springsource/bundlor/ant/antlib.xml" uri="antlib:com.springsource.bundlor.ant"
 				classpathref="bundlor.classpath"/>
