@@ -33,7 +33,9 @@
 	<target name="publish-maven-central" depends="maven.init">
 		<property name="maven.central.repository" value="s3://maven.springframework.org/${adjusted.release.type}"/>
 		<maven:deploy file="${libd.output.file}">
-			<remoteRepository url="${maven.central.repository}"/>
+			<remoteRepository url="${maven.central.repository}">
+				<authentication username="${accessKey}" passphrase="${secretKey}"/>
+			</remoteRepository>
 			<pom file="${local.pom.output.file}"/>
 		</maven:deploy>
 	</target>
