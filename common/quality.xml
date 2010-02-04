@@ -220,7 +220,7 @@
 				<istrue value="${ci.build}"/>
 			</condition>
 			<mkdir dir="${test-results.output.dir}/xml"/>
-			<junit forkmode="perBatch" dir="${basedir}" haltonerror="${test.halt}" haltonfailure="${test.halt}">
+			<junit forkmode="${test.forkmode}" dir="${basedir}" haltonerror="${test.halt}" haltonfailure="${test.halt}">
 				<jvmarg line="${test.vm.args}"/>
 				<syspropertyset>
 					<propertyref builtin="commandline"/>
