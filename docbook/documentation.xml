@@ -34,6 +34,8 @@
 			<property name="docbook.src.dir" value="${docbook.staging.dir}"/>
 			<property name="images.src.dir" value="${docbook.staging.dir}/images"/>
 			<property name="src.dir" value="${docbook.build.dir}"/>
+			<property name="css.src.dir" value="${docbook.css.dir}"/>
+			<property name="styles.src.dir" value="${docbook.styles.dir}"/>
 			<property name="target.dir" value="${docbook.target.dir}"/>
 			<target name="html"/>
 			<target name="htmlsingle"/>
@@ -71,6 +73,8 @@
 			<property name="docbook.src.dir" value="${docbook.staging.dir}"/>
 			<property name="images.src.dir" value="${docbook.staging.dir}/images"/>
 			<property name="src.dir" value="${docbook.build.dir}"/>
+			<property name="css.src.dir" value="${docbook.css.dir}"/>
+			<property name="styles.src.dir" value="${docbook.styles.dir}"/>
 			<property name="target.dir" value="${docbook.target.dir}"/>
 			<target name="pdf"/>
 		</ant>
@@ -108,6 +112,8 @@
 			<property name="docbook.src.dir" value="${docbook.staging.dir}"/>
 			<property name="images.src.dir" value="${docbook.staging.dir}/images"/>
 			<property name="src.dir" value="${docbook.build.dir}"/>
+			<property name="css.src.dir" value="${docbook.css.dir}"/>
+			<property name="styles.src.dir" value="${docbook.styles.dir}"/>
 			<property name="target.dir" value="${docbook.target.dir}"/>
 			<target name="html"/>
 			<target name="htmlsingle"/>
