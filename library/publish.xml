@@ -24,12 +24,6 @@
 		</maven:deploy>
 	</target>
 
-	<target name="publish-maven-local" depends="create.pom, snapshot.pom, maven.init">
-		<maven:install file="${libd.output.file}">
-			<pom file="${pom.output.file}"/>
-		</maven:install>
-	</target>
-
 	<target name="publish-maven-central" depends="maven.init">
 		<property name="maven.central.repository" value="s3://maven.springframework.org/${adjusted.release.type}"/>
 		<maven:deploy file="${libd.output.file}">
@@ -38,6 +32,18 @@
 			</remoteRepository>
 			<pom file="${local.pom.output.file}"/>
 		</maven:deploy>
+	</target>
+
+	<target name="install-maven" depends="create.pom, snapshot.pom, maven.init">
+		<maven:install file="${libd.output.file}">
+			<pom file="${pom.output.file}"/>
+		</maven:install>
+	</target>
+
+	<target name="install-maven-central" depends="maven.init">
+		<maven:install file="${libd.output.file}">
+			<pom file="${local.pom.output.file}"/>
+		</maven:install>
 	</target>
 
 	<target name="create.pom" depends="ivy.init, resolve">

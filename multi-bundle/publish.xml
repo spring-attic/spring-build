@@ -20,12 +20,16 @@
 		<all-bundles target="publish-maven"/>
 	</target>
 
-	<target name="publish-maven-local">
-		<all-bundles target="publish-maven-local"/>
-	</target>
-
 	<target name="publish-maven-central">
 		<all-bundles target="publish-maven-central"/>
+	</target>
+
+	<target name="install-maven">
+		<all-bundles target="install-maven"/>
+	</target>
+
+	<target name="install-maven-central">
+		<all-bundles target="install-maven-central"/>
 	</target>
 
 	<target name="publish-package" depends="aws.init">

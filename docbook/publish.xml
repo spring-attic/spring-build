@@ -19,8 +19,10 @@
 
 	<target name="publish-maven"/>
 
-	<target name="publish-maven-local"/>
-
 	<target name="publish-maven-central"/>
+
+	<target name="install-maven"/>
+
+	<target name="install-maven-central"/>
 
 </project>
