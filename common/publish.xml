@@ -76,6 +76,8 @@
 			<mapping conf="runtime" scope="runtime"/>
 			<mapping conf="test" scope="test"/>
 		</ivy:makepom>
+		<replaceregexp flags="g" match="latest.integration" replace="${project.version}"
+			file="${pom.output.file}"/>
 	</target>
 
 	<target name="snapshot.pom" depends="is.snapshot" if="snapshot.release">
