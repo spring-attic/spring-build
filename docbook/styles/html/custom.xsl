@@ -121,16 +121,4 @@
 		<xsl:comment>End Google Analytics code</xsl:comment>
 	</xsl:template>
 
-	<!-- Loopfuse -->
-	<xsl:template name="user.footer.content">
-		<xsl:comment>Begin LoopFuse code</xsl:comment>
-		<script src="http://loopfuse.net/webrecorder/js/listen.js" type="text/javascript">
-		</script>
-		<script type="text/javascript">
-			_lf_cid = "LF_48be82fa";
-			_lf_remora();
-		</script>
-		<xsl:comment>End LoopFuse code</xsl:comment>
-	</xsl:template>
-
 </xsl:stylesheet>
