@@ -27,6 +27,7 @@
 				status="${release.type}">
 			<artifacts pattern="${libd.output.dir}/[artifact].[ext]"/>
 			<artifacts pattern="${ivy.output.dir}/[artifact].[ext]"/>
+			<artifacts pattern="${license.dir}/[artifact].[ext]"/>
 		</ivy:publish>
 	</target>
 

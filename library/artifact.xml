@@ -42,6 +42,7 @@
 		<ivy:publish resolver="integration" pubdate="${timestamp}" status="${release.type}">
 			<artifacts pattern="${ivy.output.dir}/[artifact].[ext]"/>
 			<artifacts pattern="${libd.output.dir}/[artifact].[ext]"/>
+			<artifacts pattern="${license.dir}/[artifact].[ext]"/>
 		</ivy:publish>
 	</target>
 

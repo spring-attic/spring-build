@@ -145,6 +145,7 @@
 			<artifacts pattern="${docbook.output.dir}/htmlsingle/[artifact].[ext]"/>
 			<artifacts pattern="${docbook.output.dir}/pdf/[artifact].[ext]"/>
 			<artifacts pattern="${ivy.output.dir}/[artifact].[ext]"/>
+			<artifacts pattern="${license.dir}/[artifact].[ext]"/>
 		</ivy:publish>
 
 		<delete quiet="true" dir="${docbook.target.dir}"/>

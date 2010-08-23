@@ -50,6 +50,7 @@
 			<artifacts pattern="${ivy.output.dir}/[artifact].[ext]"/>
 			<artifacts pattern="${war.output.dir}/[artifact].[ext]"/>
 			<artifacts pattern="${source-jar.output.dir}/[artifact].[ext]"/>
+			<artifacts pattern="${license.dir}/[artifact].[ext]"/>
 		</ivy:publish>
 	</target>
 
