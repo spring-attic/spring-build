@@ -98,6 +98,44 @@
 		<delete quiet="true" dir="${docbook.target.dir}"/>
 	</target>
 
+	<target name="doc-eclipse" depends="docbook.init"
+			description="Creates the Eclipse Help version of the reference documentation.">
+		<delete quiet="true" dir="${docbook.output.dir}/eclipse"/>
+		<mkdir dir="${docbook.output.dir}"/>
+
+		<mkdir dir="${docbook.staging.dir}"/>
+		<copy todir="${docbook.staging.dir}">
+			<fileset dir="${docbook.src.dir}" erroronmissingdir="false">
+				<include name="**/*.xml"/>
+			</fileset>
+			<filterset>
+				<filterset refid="docbook.filters"/>
+			</filterset>
+		</copy>
+		<copy todir="${docbook.staging.dir}/images">
+			<fileset dir="${docbook.images.dir}" erroronmissingdir="false">
+				<include name="**/*"/>
+			</fileset>
+		</copy>
+
+		<ant antfile="${docbook.dir}/build-docbook.xml" inheritAll="false">
+			<property name="dbf.basedir" value="${docbook.dir}"/>
+			<property name="docbook.dir" value=""/>
+			<property name="docbook.file" value="${ant.project.name}"/>
+			<property name="docbook.src.dir" value="${docbook.staging.dir}"/>
+			<property name="images.src.dir" value="${docbook.staging.dir}/images"/>
+			<property name="src.dir" value="${docbook.build.dir}"/>
+			<property name="target.dir" value="${docbook.target.dir}"/>
+			<property name="eclipse.plugin.name" value="${docbook.eclipse.plugin.name}"/>
+			<property name="eclipse.plugin.id" value="${docbook.eclipse.plugin.id}"/>
+			<property name="eclipse.plugin.provider" value="${docbook.eclipse.plugin.provider}"/>
+			<target name="eclipse"/>
+		</ant>
+		<move file="${docbook.target.dir}/eclipse" todir="${docbook.output.dir}"/>
+
+		<delete quiet="true" dir="${docbook.target.dir}"/>
+	</target>
+
 	<target name="doc" depends="docbook.init, ivy.init, resolve"
 			description="Creates both the single and multi-page HTML versions and the PDF version of the reference documentation.">
 		<delete quiet="true" dir="${docbook.output.dir}/html"/>
