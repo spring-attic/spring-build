@@ -94,6 +94,8 @@
 				<testsources dir="..">
 					<include name="**/src/test/java/**/*.java"/>
 					<include name="**/src/test/java/*.java"/>
+					<include name="**/src/test/groovy/**/*.groovy"/>
+					<include name="**/src/test/groovy/*.groovy"/>
 				</testsources>
 			</current>
 		</clover-report>
@@ -103,6 +105,8 @@
 				<testsources dir="..">
 					<include name="**/src/test/java/**/*.java"/>
 					<include name="**/src/test/java/*.java"/>
+					<include name="**/src/test/groovy/**/*.groovy"/>
+					<include name="**/src/test/groovy/*.groovy"/>
 				</testsources>
 			</current>
 		</clover-report>
@@ -112,6 +116,8 @@
 				<testsources dir="..">
 					<include name="**/src/test/java/**/*.java"/>
 					<include name="**/src/test/java/*.java"/>
+					<include name="**/src/test/groovy/**/*.groovy"/>
+					<include name="**/src/test/groovy/*.groovy"/>
 				</testsources>
 			</current>
 		</clover-report>
@@ -120,6 +126,8 @@
 			<testsources dir="..">
 				<include name="**/src/test/java/**/*.java"/>
 				<include name="**/src/test/java/*.java"/>
+				<include name="**/src/test/groovy/**/*.groovy"/>
+				<include name="**/src/test/groovy/*.groovy"/>
 			</testsources>
 		</clover-check>
 	</target>

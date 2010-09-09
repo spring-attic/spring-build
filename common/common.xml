@@ -25,6 +25,8 @@
 	<property file="${spring.build.dir}/common/common.properties"/>
 
 <!-- Global tasks -->
+	<defaultexcludes add="**/.gitignore"/>
+
 	<condition property="adjusted.release.type" value="snapshot" else="${release.type}">
 		<equals arg1="integration" arg2="${release.type}"/>
 	</condition>
