@@ -20,7 +20,6 @@
 	<import file="../common/quality.xml"/>
 
 	<target name="test.do" depends="ivy.init, resolve.test, compile.init, test.init" if="test.exists">
-		<echo message="AAA" />
 		<path id="test.compile.classpath">
 			<pathelement location="${jar.output.file}"/>
 			<path refid="compile.classpath"/>
